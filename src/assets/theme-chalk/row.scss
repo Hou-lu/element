@@ -1,36 +1,41 @@
-.el-row {
-  &::after,
-  &::before {
-    display: block;
-    content: "";
-  }
-  &::after {
-    clear: both;
-  }
-  &--flex {
+@import './mixins/mixins.scss';
+@import './mixins/utils.scss';
+
+// scss Lists (a,b,c)
+
+@include b(row) {
+  @include utils-clearfix;
+
+  @include m(flex) {
     display: flex;
+
     &::after,
-    &::before{
+    &::before {
       display: none;
     }
-    &.is-justify-end{
+
+    @include when(justify-end) {
       justify-content: flex-end;
     }
-    &.is-justify-center{
+
+    @include when(justify-center) {
       justify-content: center;
     }
-    &.is-justify-space-between{
+
+    @include when(justify-space-between) {
       justify-content: space-between;
     }
-    &.is-justify-space-around{
+
+    @include when(justify-space-around) {
       justify-content: space-around;
     }
-    &.is-align-middle{
+
+    @include when(align-middle) {
       align-items: center;
     }
-    &.is-justify-bottom{
+
+    @include when(justify-bottom) {
       align-items: flex-end;
     }
   }
-
 }
