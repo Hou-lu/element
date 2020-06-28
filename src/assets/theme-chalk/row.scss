@@ -4,6 +4,7 @@
 // scss Lists (a,b,c)
 
 @include b(row) {
+  box-sizing: border-box;
   @include utils-clearfix;
 
   @include m(flex) {
